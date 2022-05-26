@@ -11,6 +11,9 @@ namespace Pustok.DAL
 		}
 
 		public DbSet<Slider> Sliders { get; set; }
+		public DbSet<Feature> Features { get; set; }
+		public DbSet<Promotion> Promotions { get; set; }
+		public DbSet<PromotionTwo> PromotionTwos { get; set; }
 	}
 }
 

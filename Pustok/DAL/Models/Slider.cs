@@ -11,7 +11,7 @@ namespace Pustok.DAL.Models
 		public string RedirectUrl { get; set; }
 		public string RedirectText { get; set; }
 		public bool IsDeleted { get; set; }
-		public string position { get; set; }
+		public int Order { get; set; }
 	}
 }
 

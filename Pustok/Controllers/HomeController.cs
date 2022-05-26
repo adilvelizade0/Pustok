@@ -1,10 +1,7 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Pustok.DAL;
-using Pustok.DAL.Models;
+using Pustok.ViewModels;
 
 namespace Pustok.Controllers
 {
@@ -18,8 +15,14 @@ namespace Pustok.Controllers
         }
         public IActionResult Index()
         {
-            List<Slider> sliders = _context.Sliders.ToList();
-            return View(sliders);
+            var homeViewModel = new HomeViewModel
+            {
+                Features = _context.Features.ToList(),
+                Sliders = _context.Sliders.ToList(),
+                Promotions = _context.Promotions.ToList(),
+                PromotionTwos =  _context.PromotionTwos.ToList()
+            };
+            return View(homeViewModel);
         }
     }
 }
