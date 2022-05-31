@@ -9,5 +9,9 @@ namespace Pustok.ViewModels
         public List<Feature> Features { get; set; }
         public List<Promotion> Promotions { get; set; }
         public List<PromotionTwo> PromotionTwos { get; set; }
+        public List<Product> FeaturedProducts { get; set; }
+        public List<Product> NewProduct { get; set; }
+        public List<Product> DiscountProduct { get; set; }
+        public List<Category> Categories { get; set; }
     }
 }

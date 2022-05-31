@@ -14,6 +14,9 @@ namespace Pustok.DAL
 		public DbSet<Feature> Features { get; set; }
 		public DbSet<Promotion> Promotions { get; set; }
 		public DbSet<PromotionTwo> PromotionTwos { get; set; }
+		public DbSet<Category> Categories { get; set; }
+		public DbSet<Product> Products { get; set; }
+		public DbSet<Author> Authors { get; set; }
 	}
 }
 
