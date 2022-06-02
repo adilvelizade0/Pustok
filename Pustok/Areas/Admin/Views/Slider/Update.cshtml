@@ -1,0 +1,40 @@
+@model Slider
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" class="forms-sample">
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Title 1</label>
+                            <input value="@Model.Title1" name="title1" type="text" class="form-control" id="exampleInputUsername1" placeholder="title 2">
+                        </div>
+                        <div class="form-group">
+                            <label >Title 2</label>
+                            <input value="@Model.Title2" name="title2" type="text" class="form-control"  placeholder="title 2">
+                        </div>
+                        <div class="form-group">
+                            <label >Description</label>
+                            <input value="@Model.Description" name="description" type="text" class="form-control"  placeholder="description">
+                        </div>
+                        <div class="form-group">
+                            <label >Image Url</label>
+                            <input value="@Model.ImageUrl" name="imageUrl" type="text" class="form-control"  placeholder="image url">
+                        </div>
+                        <div class="form-group">
+                            <label >Redirect Text</label>
+                            <input value="@Model.RedirectText" name="redirectText" type="text" class="form-control"  placeholder="redirect text">
+                        </div>
+                        <div class="form-group">
+                            <label >Redirect Url</label>
+                            <input value="@Model.RedirectUrl" name="redirectUrl" type="text" class="form-control"  placeholder="redirect url">
+                        </div>
+                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                        <a class="btn btn-light" asp-area="Admin" asp-controller="Slider" asp-action="Details" asp-route-id="@Model.Id">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

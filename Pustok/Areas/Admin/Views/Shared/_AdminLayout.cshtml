@@ -8,7 +8,9 @@
     <title>Majestic Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="~/Areas/Admin/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
+    <link rel="stylesheet" href="~/Areas/Admin/vendors/base/vendor.bundle.base.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="~/assets/css/plugins.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="~/assets/css/main.css"/>
     <!-- endinject -->
     <!-- plugin css for this page -->
     <link rel="stylesheet" href="~/Areas/Admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
@@ -196,8 +198,8 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-area="Admin" 
-                   asp-action="Index" >
+                <a class="nav-link" asp-area="Admin"
+                   asp-action="Index" asp-controller="ProductSlider">
                     <i class="mdi mdi-view-headline menu-icon"></i>
                     <span class="menu-title">Categories</span>
                 </a>

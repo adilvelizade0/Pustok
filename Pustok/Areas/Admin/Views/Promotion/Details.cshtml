@@ -1,0 +1,42 @@
+@model Promotion
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="card-title">Basic Table</h4>
+                        <button class="btn btn-success">Create</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Image Url</th>
+                                <th>Redirect Url</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                    <td>@Model.Id</td>
+                                    <td>
+                                        @Model.ImgUrl
+                                    </td>
+                                    <td>@Model.RedirectUrl</td>
+                                <td>
+                                        <a class="btn btn-warning" asp-area="Admin" asp-controller="Promotion" asp-action="Update" asp-route-id="@Model.Id">Update</a>
+                                        <form method="post">
+                                            <button class="btn btn-danger" asp-area="Admin" asp-controller="Promotion" asp-action="Delete" asp-route-id="@Model.Id">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

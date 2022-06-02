@@ -1,4 +1,4 @@
-@model List<Product>
+@model Slider
 
 <div class="container">
 
@@ -19,27 +19,23 @@
                                     Id
                                 </th>
                                 <th>
-                                    Name
+                                    Image
                                 </th>
                                 <th>
-                                    Author
+                                    Title 1
                                 </th>
                                 
                                 <th>
-                                    Cost Price
+                                   Title 2
                                 </th>
                                 <th>
-                                    Sale Price
+                                   Description
                                 </th>
                                 <th>
-                                    Discount Price
-                                </th>
-                               
-                                <th>
-                                    Featured
+                                    Redirect Text
                                 </th>
                                 <th>
-                                    New
+                                    Redirect Url
                                 </th>
                                 <th>
                                     Settings
@@ -47,44 +43,38 @@
                             </tr>
                             </thead>
                             <tbody>
-
-                            @foreach (var product in Model)
-                            {
-                                <tr>
+                            <tr>
                                     <td>
-                                        @product.Id
+                                        @Model.Id
                                     </td>
                                     <td>
-                                        @product.Name
+                                        <img src="~/assets/image/bg-images/@Model.ImageUrl" alt="">
                                     </td>
                                     <td>
-                                        @product.Author.Fullname
+                                        @Model.Title1
+                                    </td>
+                                    <td>
+                                        @Model.Title2
                                     </td>
                                   
                                     <td>
-                                        @product.CostPrice
-                                    </td>
-                                    <td>
-                                        @product.SalePrice
-                                    </td>
-                                    <td>
-                                        @product.DiscountPrice
+                                        @Model.Description
                                     </td>
                                     
                                     <td>
-                                        @product.IsFeatured
-                                    </td>
-                                    <td>
-                                        @product.IsNew
+                                        @Model.RedirectText
                                     </td>
                                     
+                                    <td>
+                                        @Model.RedirectUrl
+                                    </td>
                                     <td class="d-flex flex-column">
-                                        <a  class="btn btn-primary my-2" asp-action="Details" asp-controller="ProductSlider" asp-route-id="@product.Id">Details</a>
-                                        <a class="btn btn-warning my-2 " asp-action="Update" asp-controller="ProductSlider" asp-route-id="@product.Id" >Update</a>
-                                        <a  class="btn btn-danger my-2" asp-action="Details" asp-controller="ProductSlider" asp-route-id="@product.Id" >Delete</a>
+                                        <a class="btn btn-warning my-2 ">Update</a>
+                                        <form method="post">
+                                            <button  class="btn btn-danger my-2" asp-controller="Slider" asp-route-id="@Model.Id">Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
-                            }
                             </tbody>
                         </table>
                     </div>

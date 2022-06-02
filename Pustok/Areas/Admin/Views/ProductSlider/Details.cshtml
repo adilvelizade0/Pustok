@@ -1,4 +1,4 @@
-@model Product
+@model List<Product>
 <div class="container">
 
     <div class="row">
@@ -43,40 +43,45 @@
                             </thead>
                             <tbody>
 
-                           
-                                <tr>
-                                    <td>
-                                        @Model.Id
-                                    </td>
-                                    <td>
-                                        @Model.Name
-                                    </td>
-                                    <td>
-                                        @Model.Author.Fullname
-                                    </td>
+                           @foreach (var product in Model)
+                           {
+                               
+                               <tr>
+                                   <td>
+                                       @product.Id
+                                   </td>
+                                   <td>
+                                       @product.Name
+                                   </td>
+                                   <td>
+                                       @product.Author.Fullname
+                                   </td>
                                   
-                                    <td>
-                                        @Model.CostPrice
-                                    </td>
-                                    <td>
-                                        @Model.SalePrice
-                                    </td>
-                                    <td>
-                                        @Model.DiscountPrice
-                                    </td>
+                                   <td>
+                                       @product.CostPrice
+                                   </td>
+                                   <td>
+                                       @product.SalePrice
+                                   </td>
+                                   <td>
+                                       @product.DiscountPrice
+                                   </td>
                                     
-                                    <td>
-                                        @Model.IsFeatured
-                                    </td>
-                                    <td>
-                                        @Model.IsNew
-                                    </td>
+                                   <td>
+                                       @product.IsFeatured
+                                   </td>
+                                   <td>
+                                       @product.IsNew
+                                   </td>
                                     
-                                    <td class="d-flex flex-column">
-                                        <a class="btn btn-warning my-2 " asp-action="Details" asp-controller="ProductSlider" >Update</a>
-                                        <a  class="btn btn-danger my-2" asp-action="Details" asp-controller="ProductSlider" >Delete</a>
-                                    </td>
-                                </tr>
+                                   <td class="d-flex flex-column">
+                                       <a class="btn btn-warning my-2 " asp-action="Update" asp-controller="ProductSlider" asp-route-id="@product.Id"  >Update</a>
+                                       <form method="post">
+                                           <button  class="btn btn-danger my-2" asp-action="Delete" asp-controller="ProductSlider" asp-route-id="@product.Id" >Delete</button>
+                                       </form>
+                                       </td>
+                               </tr>
+                           }
                             
                             </tbody>
                         </table>

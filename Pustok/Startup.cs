@@ -47,6 +47,7 @@ namespace Pustok
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{area}/{controller=dashboard}/{action=index}/{id?}");
+                
                 endpoints.MapControllerRoute(name: "default",pattern: "{controller=home}/{action=index}/{id?}");
             });
         }

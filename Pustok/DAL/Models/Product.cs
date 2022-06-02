@@ -12,6 +12,7 @@ namespace Pustok.DAL.Models
         public string InfoText { get; set; }
         public string Desc{ get; set; }
         public bool IsNew { get; set; }
+        public bool IsDeleted { get; set; }
         public bool 
             IsFeatured { get; set; }
         public Category Category { get; set; }

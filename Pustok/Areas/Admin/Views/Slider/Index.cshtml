@@ -1,4 +1,5 @@
-@model List<Product>
+@model List<Slider>
+
 
 <div class="container">
 
@@ -8,8 +9,7 @@
                 <div class="card-body">
                     <div class="row justify-content-between">
                         <h4 class="card-title">Category Table</h4>
-                        <a asp-area="Admin" asp-controller="ProductSlider" asp-action="Create" class="btn btn-success">Create</a>
-                        
+                        <a asp-area="Admin" asp-controller="Slider" asp-action="Create" class="btn btn-success">Create</a>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped">
@@ -19,27 +19,23 @@
                                     Id
                                 </th>
                                 <th>
-                                    Name
+                                    Image
                                 </th>
                                 <th>
-                                    Author
+                                    Title 1
                                 </th>
                                 
                                 <th>
-                                    Cost Price
+                                   Title 2
                                 </th>
                                 <th>
-                                    Sale Price
+                                   Description
                                 </th>
                                 <th>
-                                    Discount Price
-                                </th>
-                               
-                                <th>
-                                    Featured
+                                    Redirect Text
                                 </th>
                                 <th>
-                                    New
+                                    Redirect Url
                                 </th>
                                 <th>
                                     Settings
@@ -48,40 +44,37 @@
                             </thead>
                             <tbody>
 
-                            @foreach (var product in Model)
+                            @foreach (var slider in Model)
                             {
                                 <tr>
                                     <td>
-                                        @product.Id
+                                        @slider.Id
                                     </td>
                                     <td>
-                                        @product.Name
+                                        <img src="~/assets/image/bg-images/@slider.ImageUrl" alt="">
                                     </td>
                                     <td>
-                                        @product.Author.Fullname
+                                        @slider.Title1
+                                    </td>
+                                    <td>
+                                        @slider.Title2
                                     </td>
                                   
                                     <td>
-                                        @product.CostPrice
-                                    </td>
-                                    <td>
-                                        @product.SalePrice
-                                    </td>
-                                    <td>
-                                        @product.DiscountPrice
+                                        @slider.Description
                                     </td>
                                     
                                     <td>
-                                        @product.IsFeatured
-                                    </td>
-                                    <td>
-                                        @product.IsNew
+                                        @slider.RedirectText
                                     </td>
                                     
+                                    <td>
+                                        @slider.RedirectUrl
+                                    </td>
                                     <td class="d-flex flex-column">
-                                        <a  class="btn btn-primary my-2" asp-action="Details" asp-controller="ProductSlider" asp-route-id="@product.Id">Details</a>
-                                        <a class="btn btn-warning my-2 " asp-action="Update" asp-controller="ProductSlider" asp-route-id="@product.Id" >Update</a>
-                                        <a  class="btn btn-danger my-2" asp-action="Details" asp-controller="ProductSlider" asp-route-id="@product.Id" >Delete</a>
+                                        <a  class="btn btn-primary my-2" asp-area="Admin" asp-controller="Slider" asp-action="Details" asp-route-id="@slider.Id" >Details</a>
+                                        <a class="btn btn-warning my-2" asp-area="Admin" asp-controller="Slider" asp-action="Update" asp-route-id="@slider.Id">Update</a>
+                                        <a  class="btn btn-danger my-2" asp-area="Admin" asp-controller="Slider" asp-action="Details" asp-route-id="@slider.Id" >Delete</a>
                                     </td>
                                 </tr>
                             }
